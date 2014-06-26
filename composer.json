@@ -1,5 +1,5 @@
 {
-    "name": "aramirez-es/inmutable-data-structures",
+    "name": "aramirez-es/immutable-data-structures",
     "require-dev": {
         "phpspec/phpspec": "*"
     },
