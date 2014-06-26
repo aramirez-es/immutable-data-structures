@@ -1,0 +1,19 @@
+{
+    "name": "aramirez-es/inmutable-data-structures",
+    "require-dev": {
+        "phpspec/phpspec": "*"
+    },
+    "authors": [
+        {
+            "name": "Alberto Ramirez",
+            "email": "alberto@aramirez.es"
+        }
+    ],
+    "require": {
+
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "autoload": {"psr-0": {"": "src"}}
+}
