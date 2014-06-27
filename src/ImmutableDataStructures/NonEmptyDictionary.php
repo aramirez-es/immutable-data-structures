@@ -10,9 +10,9 @@ class NonEmptyDictionary implements Dictionary
 
     function __construct(Pair $pair, Dictionary $left, Dictionary $right)
     {
-        $this->pair = $pair;
-        $this->left = $left;
-        $this->right = $right;
+        $this->pair     = $pair;
+        $this->left     = $left;
+        $this->right    = $right;
     }
 
     public function isEmpty()
@@ -22,28 +22,30 @@ class NonEmptyDictionary implements Dictionary
 
     public function get($key)
     {
-        if ($key < $this->pair->getFirst()) {
+        $difference = strcmp($key, $this->pair->getFirst());
+
+        if ($difference < 0) {
             return $this->left->get($key);
         }
-        else if ($this->pair->getFirst() < $key) {
+        else if ($difference > 0) {
             return $this->right->get($key);
         }
-        else {
-            return $this->pair->getSecond();
-        }
+
+        return $this->pair->getSecond();
     }
 
     public function set($key, $value)
     {
-        if ($key < $this->pair->getFirst()) {
+        $difference = strcmp($key, $this->pair->getFirst());
+
+        if ($difference < 0) {
             return new self($this->pair, $this->left->set($key, $value), $this->right);
         }
-        else if ($this->pair->getFirst() < $key) {
+        else if ($difference > 0) {
             return new self($this->pair, $this->left, $this->right->set($key, $value));
         }
-        else {
-            return $this;
-        }
+
+        return $this;
     }
 
 

@@ -13,17 +13,11 @@ class Pair {
         $this->second = $second;
     }
 
-    /**
-     * @return mixed
-     */
     public function getFirst()
     {
         return $this->first;
     }
 
-    /**
-     * @return mixed
-     */
     public function getSecond()
     {
         return $this->second;
