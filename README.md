@@ -10,26 +10,26 @@ First of all, this is a proof of concept just to learning purposes. *Don't use i
 ```php
 $ php perf/skeleton.php 100000 array
 
-    Performed test      : "array / 100000 iterations".
-    Time taken          : "0.507 seg".
-    Memory Peak         : "34.509 MB".
-    Memory Peak (real)  : "35.500 MB".
+    Performed test      : "array / 100000 ops (30% writes / 70% reads)".
+    Time taken          : "37.561 seg".
+    Memory Peak         : "29.609 MB".
+    Memory Peak (real)  : "31.000 MB".
 ```
 
 ```php
 $ php perf/skeleton.php 100000 fixedarray
 
-    Performed test      : "fixedarray / 100000 iterations".
-    Time taken          : "0.072 seg".
-    Memory Peak         : "24.353 MB".
-    Memory Peak (real)  : "25.250 MB".
+    Performed test      : "fixedarray / 100000 ops (30% writes / 70% reads)".
+    Time taken          : "0.053 seg".
+    Memory Peak         : "21.554 MB".
+    Memory Peak (real)  : "22.500 MB".
 ```
 
 ```php
 $ php perf/skeleton.php 100000 dictionary
 
-    Performed test      : "dictionary / 100000 iterations".
-    Time taken          : "65.271 seg".
-    Memory Peak         : "72.436 MB".
-    Memory Peak (real)  : "73.250 MB".
+    Performed test      : "dictionary / 100000 ops (30% writes / 70% reads)".
+    Time taken          : "54.677 seg".
+    Memory Peak         : "37.970 MB".
+    Memory Peak (real)  : "39.250 MB".
 ```

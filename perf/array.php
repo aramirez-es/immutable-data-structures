@@ -1,16 +1,19 @@
 <?php
 
 
-return function($range) {
+return function($writes, $reads) {
+    $indexed    = [];
     $collection = [];
     // Set
-    foreach ($range as $index) {
-        $collection[openssl_random_pseudo_bytes(10)] = $index;
+    foreach ($writes as $index) {
+        $key        = openssl_random_pseudo_bytes(10);
+        $indexed[]  = $key;
+        $collection[$key] = $index;
     }
 
     // Get
-    foreach ($range as $index) {
-        !empty($collection[openssl_random_pseudo_bytes(10)]);
+    foreach ($reads as $index) {
+        !empty($collection[$indexed[array_rand($indexed)]]);
     }
 
     return $collection;

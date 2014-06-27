@@ -3,16 +3,19 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-return function($range) {
+return function($writes, $reads) {
+    $indexed    = [];
     $collection = new \ImmutableDataStructures\EmptyDictionary();
     // Set
-    foreach ($range as $index) {
-        $collection = $collection->set(openssl_random_pseudo_bytes(10), $index);
+    foreach ($writes as $index) {
+        $key        = openssl_random_pseudo_bytes(10);
+        $indexed[]  = $key;
+        $collection = $collection->set($key, $index);
     }
 
     // Get
-    foreach ($range as $index) {
-        ($collection->get(openssl_random_pseudo_bytes(10)) !== null);
+    foreach ($reads as $index) {
+        ($collection->get($indexed[array_rand($indexed)]) !== null);
     }
 
     return $collection;

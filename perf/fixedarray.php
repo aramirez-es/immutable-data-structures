@@ -1,15 +1,15 @@
 <?php
 
 
-return function($range) {
-    $collection = new \SplFixedArray(count($range));
+return function($writes, $reads) {
+    $collection = new \SplFixedArray(count($writes));
     // Set
-    foreach ($range as $index) {
+    foreach ($writes as $index) {
         $collection[$index] = $index;
     }
 
     // Get
-    foreach ($range as $index) {
+    foreach ($reads as $index) {
         !empty($collection[$index]);
     }
 
