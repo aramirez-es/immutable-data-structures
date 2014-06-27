@@ -11,7 +11,7 @@ class EmptyDictionary implements Dictionary
 
     public function set($key, $value)
     {
-        return new NonEmptyDictionary(new Pair($key, $value), $this);
+        return new NonEmptyDictionary(new Pair($key, $value), new self, new self);
     }
 
     public function get($key)

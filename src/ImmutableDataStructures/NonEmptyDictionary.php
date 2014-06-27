@@ -5,12 +5,14 @@ namespace ImmutableDataStructures;
 class NonEmptyDictionary implements Dictionary
 {
     private $pair;
-    private $other;
+    private $left;
+    private $right;
 
-    function __construct(Pair $pair, Dictionary $other)
+    function __construct(Pair $pair, Dictionary $left, Dictionary $right)
     {
         $this->pair = $pair;
-        $this->other = $other;
+        $this->left = $left;
+        $this->right = $right;
     }
 
     public function isEmpty()
@@ -20,14 +22,28 @@ class NonEmptyDictionary implements Dictionary
 
     public function get($key)
     {
-        return $this->pair->getFirst() === $key
-            ? $this->pair->getSecond()
-            : $this->other->get($key);
+        if ($key < $this->pair->getFirst()) {
+            return $this->left->get($key);
+        }
+        else if ($this->pair->getFirst() < $key) {
+            return $this->right->get($key);
+        }
+        else {
+            return $this->pair->getSecond();
+        }
     }
 
     public function set($key, $value)
     {
-        return new self(new Pair($key, $value), $this);
+        if ($key < $this->pair->getFirst()) {
+            return new self($this->pair, $this->left->set($key, $value), $this->right);
+        }
+        else if ($this->pair->getFirst() < $key) {
+            return new self($this->pair, $this->left, $this->right->set($key, $value));
+        }
+        else {
+            return $this;
+        }
     }
 
 
