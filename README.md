@@ -8,21 +8,30 @@ First of all, this is a proof of concept just to learning purposes. *Don't use i
 - 4 GB 1333 MHz DDR3
 
 ```bash
-$ php perf/skeleton.php 100000 array
+$ php perf/skeleton.php 10000 array
 
-    Performed test      : "array / 100000 ops (30% writes / 70% reads)".
-    Time taken          : "37.561 seg".
-    Memory Peak         : "29.609 MB".
-    Memory Peak (real)  : "31.000 MB".
+    Performed test      : "array / 10000 ops (30% writes / 70% reads)".
+    Time taken          : "0.232 seg".
+    Memory Peak         : "3.113 MB".
+    Memory Peak (real)  : "3.250 MB".
 ```
 
 ```bash
-$ php perf/skeleton.php 100000 dictionary
+$ php perf/skeleton.php 10000 dictionary
 
-    Performed test      : "dictionary / 100000 ops (30% writes / 70% reads)".
-    Time taken          : "54.677 seg".
-    Memory Peak         : "37.970 MB".
-    Memory Peak (real)  : "39.250 MB".
+    Performed test      : "dictionary / 10000 ops (30% writes / 70% reads)".
+    Time taken          : "0.444 seg".
+    Memory Peak         : "4.072 MB".
+    Memory Peak (real)  : "4.500 MB".
+```
+
+```bash
+$ php perf/skeleton.php 10000 mutable-dictionary
+
+   Performed test      : "mutable-dictionary / 10000 ops (30% writes / 70% reads)".
+    Time taken          : "0.450 seg".
+    Memory Peak         : "4.954 MB".
+    Memory Peak (real)  : "5.250 MB".
 ```
 
 Known issues
