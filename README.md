@@ -37,3 +37,10 @@ $ php perf/skeleton.php 10000 mutable-dictionary
 Known issues
 ------------
 - Tree is not re-indexed after every set.
+
+
+Tests
+-----
+```bash
+$ bin/phpspec run
+```
