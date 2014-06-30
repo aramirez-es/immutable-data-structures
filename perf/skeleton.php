@@ -11,7 +11,7 @@ $reads  = 0.7;
 
 {
     $to         = isset($argv[1]) ? (int) $argv[1] : 10000;
-    $test       = (isset($argv[2]) && in_array($argv[2], array( 'array', 'dictionary', 'fixedarray' ))) ? $argv[2] : 'array';
+    $test       = (isset($argv[2]) && in_array($argv[2], array( 'array', 'dictionary' ))) ? $argv[2] : 'array';
     $function   = include __DIR__ . "/{$test}.php";
     $result     = $function(range(0, round($to * $writes)), range(0, round($to * $reads)));
 }

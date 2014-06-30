@@ -17,15 +17,6 @@ $ php perf/skeleton.php 100000 array
 ```
 
 ```bash
-$ php perf/skeleton.php 100000 fixedarray
-
-    Performed test      : "fixedarray / 100000 ops (30% writes / 70% reads)".
-    Time taken          : "0.053 seg".
-    Memory Peak         : "21.554 MB".
-    Memory Peak (real)  : "22.500 MB".
-```
-
-```bash
 $ php perf/skeleton.php 100000 dictionary
 
     Performed test      : "dictionary / 100000 ops (30% writes / 70% reads)".
@@ -33,3 +24,7 @@ $ php perf/skeleton.php 100000 dictionary
     Memory Peak         : "37.970 MB".
     Memory Peak (real)  : "39.250 MB".
 ```
+
+Known issues
+------------
+- Tree is not re-indexed after every set.
