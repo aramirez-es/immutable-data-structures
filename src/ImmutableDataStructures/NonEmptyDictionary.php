@@ -48,5 +48,9 @@ class NonEmptyDictionary implements Dictionary
         return $this;
     }
 
+    public function weight()
+    {
+        return 1 + $this->left->weight() + $this->right->weight();
+    }
 
 }

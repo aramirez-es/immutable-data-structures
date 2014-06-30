@@ -36,4 +36,11 @@ class DictionarySpec extends ObjectBehavior
             ->get('k2')
             ->shouldReturn('v2');
     }
+
+    function it_should_return_weight()
+    {
+        $this->weight()->shouldReturn(0);
+        $this->set('key', 'value')->weight()->shouldReturn(1);
+        $this->set('key', 'value')->set('key2', 'value')->set('key3', 'value')->set('key4', 'value')->weight()->shouldReturn(4);
+    }
 }

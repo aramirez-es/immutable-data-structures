@@ -6,7 +6,7 @@ return function($writes, $reads) {
     $collection = [];
     // Set
     foreach ($writes as $index) {
-        $key        = openssl_random_pseudo_bytes(10);
+        $key        = substr(sha1(uniqid()), 0, 6);
         $indexed[]  = $key;
         $collection[$key] = $index;
     }

@@ -55,4 +55,12 @@ class Dictionary implements DictionaryInterface
 
         return $this;
     }
+
+    public function weight()
+    {
+        if ($this->isEmpty()) {
+            return 0;
+        }
+        return 1 + $this->left->weight() + $this->right->weight();
+    }
 }

@@ -18,4 +18,9 @@ class EmptyDictionary implements Dictionary
     {
         return null;
     }
+
+    public function weight()
+    {
+        return 0;
+    }
 }
