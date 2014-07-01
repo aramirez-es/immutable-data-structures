@@ -22,4 +22,18 @@ class Pair {
     {
         return $this->second;
     }
+
+    public function compareTo(Pair $other)
+    {
+        $difference = strcmp($this->getFirst(), $other->getFirst());
+
+        if ($difference < 0) {
+            return -1;
+        }
+        else if ($difference > 0) {
+            return 1;
+        }
+
+        return 0;
+    }
 }

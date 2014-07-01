@@ -36,13 +36,13 @@ class NonEmptyDictionary implements Dictionary
 
     public function set($key, $value)
     {
-        $difference = strcmp($key, $this->pair->getFirst());
+        $difference = $this->pair->compareTo(new Pair($key, $value));
 
         if ($difference < 0) {
-            return new self($this->pair, $this->left->set($key, $value), $this->right);
+            return new self($this->pair, $this->left, $this->right->set($key, $value));
         }
         else if ($difference > 0) {
-            return new self($this->pair, $this->left, $this->right->set($key, $value));
+            return new self($this->pair, $this->left->set($key, $value), $this->right);
         }
 
         return $this;

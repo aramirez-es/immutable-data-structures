@@ -43,13 +43,13 @@ class Dictionary implements DictionaryInterface
             $this->right    = new self;
         }
         else {
-            $difference = strcmp($key, $this->pair->getFirst());
+            $difference = $this->pair->compareTo(new Pair($key, $value));
 
             if ($difference < 0) {
-                $this->left->set($key, $value);
+                $this->right->set($key, $value);
             }
             else if ($difference > 0) {
-                $this->right->set($key, $value);
+                $this->left->set($key, $value);
             }
         }
 

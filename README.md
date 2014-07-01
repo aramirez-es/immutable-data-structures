@@ -34,10 +34,6 @@ $ php perf/skeleton.php 10000 mutable-dictionary
     Memory Peak (real)  : "5.250 MB".
 ```
 
-Known issues
-------------
-- Tree is not re-indexed after every set.
-
 
 Tests
 -----
