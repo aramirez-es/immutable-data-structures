@@ -22,13 +22,13 @@ class Dictionary implements DictionaryInterface
             return null;
         }
         else {
-            $difference = strcmp($key, $this->pair->getFirst());
+            $difference = $this->pair->compareTo(new Pair($key, null));
 
             if ($difference < 0) {
-                return $this->left->get($key);
+                return $this->right->get($key);
             }
             else if ($difference > 0) {
-                return $this->right->get($key);
+                return $this->left->get($key);
             }
 
             return $this->pair->getSecond();

@@ -22,13 +22,13 @@ class NonEmptyDictionary implements Dictionary
 
     public function get($key)
     {
-        $difference = strcmp($key, $this->pair->getFirst());
+        $difference = $this->pair->compareTo(new Pair($key, null));
 
         if ($difference < 0) {
-            return $this->left->get($key);
+            return $this->right->get($key);
         }
         else if ($difference > 0) {
-            return $this->right->get($key);
+            return $this->left->get($key);
         }
 
         return $this->pair->getSecond();
