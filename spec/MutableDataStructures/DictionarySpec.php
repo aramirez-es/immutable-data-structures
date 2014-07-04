@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\ComparativeDataStructures;
+namespace spec\MutableDataStructures;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -9,7 +9,7 @@ class DictionarySpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('ComparativeDataStructures\Dictionary');
+        $this->shouldHaveType('MutableDataStructures\Dictionary');
     }
 
     function it_should_be_empty()

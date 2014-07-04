@@ -1,6 +1,6 @@
 <?php
 
-namespace ComparativeDataStructures;
+namespace MutableDataStructures;
 
 use ImmutableDataStructures\Dictionary as DictionaryInterface;
 use ImmutableDataStructures\Pair;

@@ -5,7 +5,7 @@ require __DIR__ . '/../vendor/autoload.php';
 
 return function($writes, $reads) {
     $indexed    = [];
-    $collection = new ComparativeDataStructures\Dictionary();
+    $collection = new MutableDataStructures\Dictionary();
     // Set
     foreach ($writes as $index) {
         $key        = substr(sha1(uniqid()), 0, 6);
